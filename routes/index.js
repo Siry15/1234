@@ -3,13 +3,15 @@ var router = express.Router();
 const db = require('../db/models');
 require('dotenv').config()
 
-
-//login
-let logged = false;
-
 router.get('/', (req, res) => {
-  res.render('login')
+  res.render('view')
 } )
+
+router.get('/login', (req, res)=>{
+  res.render('login')
+})
+
+
 
 router.post('/login', function(req,res, next) {
   let user = req.body.user
